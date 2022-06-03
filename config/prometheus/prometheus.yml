@@ -2,9 +2,9 @@ global:
   scrape_interval:     15s
   evaluation_interval: 15s
   external_labels:
-      monitor: 'SENSIOT'
+      monitor: 'DHTSENSOR'
 scrape_configs:
-  - job_name: 'sensiot'
+  - job_name: 'dhtsensor'
     scrape_interval: 1s
     static_configs:
          - targets: ['prometheus_writer:8000']

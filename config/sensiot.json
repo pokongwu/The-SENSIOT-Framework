@@ -25,8 +25,8 @@
       "global_sensors": {
         "sensor_mock": {
           "service": "temperature_humidity_sensor",
-          "type": "mock",
-          "image": "unibaub/sensiot",
+          "type": "dht",
+          "image": "dhtsensor",
           "devices": [],
           "command": "",
           "configuration": {

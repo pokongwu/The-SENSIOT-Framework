@@ -1,6 +1,7 @@
 import logging
 import os
-import Adafruit_DHT
+import adafruit_dht
+import board
 
 from sensors.meta.data import Measurement
 from sensors.meta.sensor import AbstractSensor
@@ -21,10 +22,11 @@ class DHT(AbstractSensor):
     def read(self):
         self.event.wait(self.interval)
         logger.info("Reading data from GPIO...")
-        hum, temp = Adafruit_DHT.read_retry(sensor=self.short_type, pin=self.gpio)
-        if hum and temp:
+        dht_device = adafruit_dht.DHT22(board.D25)
+        if dht_device :
             measurement = Measurement(self.id, self.type)
-            measurement.add("temperature", temp, "°C")
-            measurement.add("humidity", hum, "%")
+            measurement.add("temperature", dht_device.temperature, "°C")
+            measurement.add("humidity", dht_device.humidity, "%")
             logger.info("Data received: {}".format(measurement))
         return [measurement]
+
