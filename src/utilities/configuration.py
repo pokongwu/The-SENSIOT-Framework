@@ -5,7 +5,7 @@ import os
 class ConfigurationReader:
 
     def get():
-        configuration = os.getenv('CONFIG')
+        configuration = "config/local_configuration.json"
         if os.path.isfile(configuration):
             with open(configuration, "r") as file:
                 config = json.load(file)
