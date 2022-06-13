@@ -42,13 +42,13 @@ services:
       backend:
     
 
-#  memcached:
-#    image: memcached:latest
-#    command: memcached -vv
-#    restart: on-failure
-#    networks:
-#      backend:
-#
+  memcached:
+    image: memcached:latest
+    command: memcached -vv
+    restart: on-failure
+    networks:
+      backend:
+
 #  influxdb:
 #    image: influxdb:latest
 #    restart: on-failure
@@ -113,19 +113,19 @@ services:
       SERVICE: "local_manager"
 
 #################################################
-#  json_memcache_writer:
-#    image: dhtsensor
-#    restart: on-failure
-#    depends_on:
-#      - memcached
-#    volumes:
-#      - ./config/sensiot.json:/app/sensiot.json
-#    networks:
-#      backend:
-#    tty: true
-#    environment:
-#      CONFIG: ./sensiot.json
-#      SERVICE: "sensor_data_memcache_writer"
+  json_memcache_writer:
+    image: dhtsensor
+    restart: on-failure
+    depends_on:
+      - memcached
+    volumes:
+      - ./config/sensiot.json:/app/sensiot.json
+    networks:
+      backend:
+    tty: true
+    environment:
+      CONFIG: ./sensiot.json
+      SERVICE: "sensor_data_memcache_writer"
 
 #################################################
 #  influxdb_writer:
@@ -177,16 +177,16 @@ services:
 #      SERVICE: "web"
 
 #################################################
-#  sensor_list:
-#    image: dhtsensor
-#    restart: on-failure
-#    depends_on:
-#      - memcached
-#    volumes:
-#      - ./config/sensiot.json:/app/sensiot.json
-#    networks:
-#      backend:
-#    tty: true
-#    environment:
-#      CONFIG: ./sensiot.json
-#      SERVICE: "sensor_list_memcache_writer"
+  sensor_list:
+    image: dhtsensor
+    restart: on-failure
+    depends_on:
+      - memcached
+    volumes:
+      - ./config/sensiot.json:/app/sensiot.json
+    networks:
+      backend:
+    tty: true
+    environment:
+      CONFIG: ./sensiot.json
+      SERVICE: "sensor_list_memcache_writer"
