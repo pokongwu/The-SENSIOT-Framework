@@ -23,19 +23,18 @@
       "label": "sensiot-sensor-container",
       "network_name": "sensiot_backend",
       "global_sensors": {
-        "dht": {
+        "sensor_mock": {
           "service": "temperature_humidity_sensor",
-          "type": "dht",
+          "type": "mock",
           "image": "dhtsensor",
-          "devices": ["/dev/mem"],
+          "devices": [],
           "command": "",
           "configuration": {
-            "id": 1,
-            "gpio": 25,
-            "short_type": 22,
+            "sensor_count": 5,
+            "temperature": 25.0,
+            "humidity": 62.0,
             "interval": 60
-           }
-         }
+          }
         }
       }
     },
@@ -82,5 +81,4 @@
       "port": 8000
     }
   }
-
-
+}

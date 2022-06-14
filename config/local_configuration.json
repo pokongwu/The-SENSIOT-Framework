@@ -1,25 +1,12 @@
 {
   "meta": {
     "architecture": "amd64",
-    "device_id": "DhtDev1"
+    "device_id": "RPiDev1"
   },
   "location": {
-    "building": "A3",
-    "room": "Lobby"
+    "building": "L9",
+    "room": "Living Room"
   },
   "local_sensors": {
-   "dht": {
-     "service": "temperature_humidity_sensor",
-     "type": "dht",
-     "image": "dhtsensor",
-     "devices": ["/dev/mem"],
-     "command": "",
-     "configuration": {
-       "id": 1,
-       "gpio": 25,
-       "short_type": 22,
-       "interval": 5
-      }
-    }
   }
 }
