@@ -23,8 +23,8 @@ class DHT(AbstractSensor):
         self.event.wait(self.interval)
         logger.info("Reading data from GPIO...")
         dht_device = adafruit_dht.DHT22(board.D25)
+        measurement = Measurement(self.id, self.type)
         if dht_device :
-            measurement = Measurement(self.id, self.type)
             measurement.add("temperature", dht_device.temperature, "°C")
             measurement.add("humidity", dht_device.humidity, "%")
             logger.info("Data received: {}".format(measurement))
