@@ -11,7 +11,7 @@
     "dht": {
       "service": "temperature_humidity_sensor",
       "type": "dht",
-      "image": "unibaub/sensiot",
+      "image": "dhtsensor",
       "devices": ["/dev/mem"],
       "command": "",
       "configuration": {
