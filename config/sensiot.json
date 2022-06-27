@@ -38,9 +38,7 @@
         }
       }
     },
-    "sensorlist": {
-      "interval": 300
-    },
+    
     "nsq": {
       "nsqd": {
         "ip": "nsqd",
@@ -60,22 +58,6 @@
         "timeout": 2,
         "max_tries": 10
       }
-    },
-    "memcached": {
-      "ip": "memcached",
-      "port": 11211,
-      "connect_timeout": 180,
-      "timeout": 180,
-      "key_expiration": 600,
-      "noreply_flag": true
-    },
-    "influxdb_writer": {
-      "ip": "influxdb",
-      "port": 8086,
-      "user": "root",
-      "password": "root",
-      "database": "sensiot",
-      "measurements": "Temperature & Humidity"
     },
     "prometheus_writer": {
       "port": 8000

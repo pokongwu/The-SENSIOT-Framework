@@ -16,12 +16,13 @@ class DHT(AbstractSensor):
         self.gpio = config['gpio']
         self.short_type = config['short_type']
         self.interval = config['interval']
-        self.type = "DHT{}".format(self.short_type)
+        self.type = "DHT{}".format(self.short_type)#DHT22
         logger.info("{} initialized successfully".format(self.name))
 
     def read(self):
         self.event.wait(self.interval)
         logger.info("Reading data from GPIO...")
+        #dht_device = adafruit_dht.self.type(board.self.gpio)
         dht_device = adafruit_dht.DHT22(board.D25)
         measurement = Measurement(self.id, self.type)
         if dht_device :
