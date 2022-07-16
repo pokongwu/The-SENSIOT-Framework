@@ -1,0 +1,14 @@
+{"sound": {
+    "service": "temperature_humidity_sound_sensor",
+    "type": "sound",
+    "image": "dhtsensor",
+    "devices": ["/dev/mem"],
+    "command": "",
+    "configuration": {
+      "id": 1,
+      "gpio": 25,
+      "short_type": 22,
+      "interval": 60
+    }
+  }
+}

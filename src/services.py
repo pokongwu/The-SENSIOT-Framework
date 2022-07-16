@@ -19,7 +19,7 @@ class Services:
             "web": self.__create_web,
             "sensor_data_memcache_writer": self.__create_sensor_data_memcache,
             "sensor_list_memcache_writer": self.__create_sensor_list_creator,
-            "temperature_humidity_sensor": self.__create_temperature_humidity_sensor
+            "temperature_humidity_sound_sensor": self.__create_temperature_humidity_sound_sensor
         }
 
     def get_services(self, type):
@@ -64,10 +64,10 @@ class Services:
             return threads
 
     """
-    Temperature & Humidity Sensors
+    Temperature & Humidity and Sound Sensors
 
     """
-    def __create_temperature_humidity_sensor(self):
+    def __create_temperature_humidity_sound_sensor(self):
             from utilities.socket.socket_writer import SocketWriter
             threads = []
             type = os.environ['TYPE']
@@ -83,6 +83,10 @@ class Services:
                 from sensors.temperature_humidity.dht import DHT
                 dht = DHT("DHT", self.config['configuration'], self.event, sensor_queue)
                 threads.append(dht)
+            elif type == "sound":
+                from sensors.sound.pcf8591_lm358 import Sound
+                sound = Sound("Sound", self.config['configuration'], self.event, sensor_queue)
+                threads.append(sound)
             elif type == "mock":
                 from sensors.temperature_humidity.sensor_mock import SensorMock
                 mock = SensorMock("Mock", self.event, sensor_queue, self.config['configuration'])
