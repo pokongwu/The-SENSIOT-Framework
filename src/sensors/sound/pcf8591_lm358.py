@@ -29,6 +29,6 @@ class Sound(AbstractSensor):
         read_value = pcf.read(self.channel)
         if read_value:
             measurement = Measurement(self.id, self.type)
-            measurement.add("sound", read_value, "")
+            measurement.add("sound", read_value, "dB")
             logger.info("Data received: {}".format(measurement))
         return [measurement]

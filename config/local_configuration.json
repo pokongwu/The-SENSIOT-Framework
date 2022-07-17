@@ -11,7 +11,7 @@
     "sound": {
       "service": "temperature_humidity_sound_sensor",
       "type": "sound",
-      "image": "soundsensor",
+      "image": "dht_sound_sensor",
       "devices": ["/dev/mem"],
       "command": "",
       "configuration": {

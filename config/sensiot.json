@@ -26,7 +26,7 @@
         "sensor_mock": {
           "service": "temperature_humidity_sound_sensor",
           "type": "mock",
-          "image": "dhtsensor",
+          "image": "dht_sound_sensor",
           "devices": [],
           "command": "",
           "configuration": {
