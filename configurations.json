@@ -1,14 +1,29 @@
 {"sound": {
     "service": "temperature_humidity_sound_sensor",
     "type": "sound",
-    "image": "dhtsensor",
+    "image": "soundsensor",
     "devices": ["/dev/mem"],
     "command": "",
     "configuration": {
-      "id": 1,
-      "gpio": 25,
-      "short_type": 22,
+      "id": 2,
+      "channel": 0,
+      "short_type": 8591,
       "interval": 60
     }
   }
+}
+
+{"dht": {
+  "service": "temperature_humidity_sensor",
+  "type": "dht",
+  "image": "dhtsensor",
+  "devices": ["/dev/mem"],
+  "command": "",
+  "configuration": {
+    "id": 1,
+    "gpio": 25,
+    "short_type": 22,
+    "interval": 60
+  }
+}
 }

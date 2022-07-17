@@ -8,16 +8,16 @@
     "room": "Living Room"
   },
   "local_sensors": {
-    "dht": {
-      "service": "temperature_humidity_sensor",
-      "type": "dht",
-      "image": "dhtsensor",
+    "sound": {
+      "service": "temperature_humidity_sound_sensor",
+      "type": "sound",
+      "image": "soundsensor",
       "devices": ["/dev/mem"],
       "command": "",
       "configuration": {
-        "id": 1,
-        "gpio": 25,
-        "short_type": 22,
+        "id": 2,
+        "channel": 0,
+        "short_type": 8591,
         "interval": 60
       }
     }
