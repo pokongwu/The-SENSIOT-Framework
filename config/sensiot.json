@@ -24,9 +24,9 @@
       "network_name": "sensiot_backend",
       "global_sensors": {
         "sensor_mock": {
-          "service": "temperature_humidity_sound_sensor",
+          "service": "temperature_humidity_rain_sound_sensor",
           "type": "mock",
-          "image": "dht_sound_sensor",
+          "image": "dht_rain_sound_sensor",
           "devices": [],
           "command": "",
           "configuration": {

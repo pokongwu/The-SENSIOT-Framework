@@ -9,16 +9,16 @@
   },
   "local_sensors": {
     "sound": {
-      "service": "temperature_humidity_sound_sensor",
+      "service": "temperature_humidity_rain_sound_sensor",
       "type": "rain",
-      "image": "dht_sound_sensor",
+      "image": "dht_rain_sound_sensor",
       "devices": ["/dev/mem"],
       "command": "",
       "configuration": {
-        "id": 5,
+        "id": 4,
         "channel": 1,
         "short_type": 393,
-        "interval": 30
+        "interval": 60
       }
     }
   }
