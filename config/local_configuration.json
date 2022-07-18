@@ -9,7 +9,7 @@
   },
   "local_sensors": {
     "rain": {
-      "service": "rain_sensor",
+      "service": "temperature_humidity_rain_sound_sensor",
       "type": "rain",
       "image": "dht_rain_sound_sensor",
       "devices": ["/dev/mem"],
@@ -22,7 +22,7 @@
       }
     },
     "sound": {
-      "service": "sound_sensor",
+      "service": "temperature_humidity_rain_sound_sensor",
       "type": "sound",
       "image": "dht_rain_sound_sensor",
       "devices": ["/dev/mem"],
