@@ -1,3 +1,4 @@
+
 {
   "annotations": {
     "list": [
@@ -56,7 +57,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "avg_over_time({__name__=~\"sensordat:.*\", name=\"$sensor\"}[$interval])",
+          "expr": "avg_over_time({__name__=~\"sensiot:.*\", name=\"$sensor\"}[$interval])",
           "format": "time_series",
           "hide": false,
           "instant": false,
@@ -178,7 +179,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "avg_over_time({__name__=~\"sensordat:.*:$sensor_id\", name=\"temperature\"}[$interval])",
+          "expr": "avg_over_time({__name__=~\"sensiot:.*:$sensor_id\", name=\"temperature\"}[$interval])",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -266,7 +267,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "avg_over_time({__name__=~\"sensordat:.*:$sensor_id\", name=\"humidity\"}[$interval])",
+          "expr": "avg_over_time({__name__=~\"sensiot:.*:$sensor_id\", name=\"humidity\"}[$interval])",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -354,7 +355,7 @@
             "value": "12h"
           }
         ],
-        "query": "30s,1m,2m,5m,10m,30m,1h,6h,12h",
+        "query": "10s,30s,1m,2m,5m,10m,30m,1h,6h,12h",
         "refresh": 2,
         "skipUrlSync": false,
         "type": "interval"

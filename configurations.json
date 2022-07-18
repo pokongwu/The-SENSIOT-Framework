@@ -27,3 +27,17 @@
   }
 }
 }
+{"rain": {
+  "service": "temperature_humidity_sound_sensor",
+  "type": "rain",
+  "image": "soundsensor",
+  "devices": ["/dev/mem"],
+  "command": "",
+  "configuration": {
+    "id": 5,
+    "channel": 1,
+    "short_type": 393,
+    "interval": 30
+  }
+}
+}
