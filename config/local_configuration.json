@@ -24,7 +24,7 @@
     "sound": {
       "service": "sound_sensor",
       "type": "sound",
-      "image": "soundsensor",
+      "image": "dht_rain_sound_sensor",
       "devices": ["/dev/mem"],
       "command": "",
       "configuration": {
