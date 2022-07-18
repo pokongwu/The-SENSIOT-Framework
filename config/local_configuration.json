@@ -8,8 +8,8 @@
     "room": "Living Room"
   },
   "local_sensors": {
-    "sound": {
-      "service": "temperature_humidity_rain_sound_sensor",
+    "rain": {
+      "service": "rain_sensor",
       "type": "rain",
       "image": "dht_rain_sound_sensor",
       "devices": ["/dev/mem"],
@@ -18,6 +18,19 @@
         "id": 4,
         "channel": 1,
         "short_type": 393,
+        "interval": 60
+      }
+    },
+    "sound": {
+      "service": "sound_sensor",
+      "type": "sound",
+      "image": "soundsensor",
+      "devices": ["/dev/mem"],
+      "command": "",
+      "configuration": {
+        "id": 2,
+        "channel": 0,
+        "short_type": 8591,
         "interval": 60
       }
     }
