@@ -8,6 +8,19 @@
     "room": "Living Room"
   },
   "local_sensors": {
+    "dht": {
+      "service": "temperature_humidity_rain_sound_sensor",
+      "type": "dht",
+      "image": "dht_rain_sound_sensor",
+      "devices": ["/dev/mem"],
+      "command": "",
+      "configuration": {
+        "id": 1,
+        "gpio": 25,
+        "short_type": 22,
+        "interval": 60
+      }
+    },
     "rain": {
       "service": "temperature_humidity_rain_sound_sensor",
       "type": "rain",
