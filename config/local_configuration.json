@@ -20,6 +20,32 @@
         "short_type": 22,
         "interval": 30
       }
+    },
+    "rain": {
+      "service": "temperature_humidity_rain_sound_sensor",
+      "type": "rain",
+      "image": "dht_rain_sound_sensor",
+      "devices": ["/dev/mem"],
+      "command": "",
+      "configuration": {
+        "id": 4,
+        "channel": 1,
+        "short_type": 393,
+        "interval": 30
+      }
+    },
+    "sound": {
+      "service": "temperature_humidity_rain_sound_sensor",
+      "type": "sound",
+      "image": "dht_rain_sound_sensor",
+      "devices": ["/dev/mem"],
+      "command": "",
+      "configuration": {
+        "id": 2,
+        "channel": 0,
+        "short_type": 8591,
+        "interval": 30
+      }
     }
   }
 }
