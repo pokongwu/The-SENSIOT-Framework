@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1658151623080,
+  "iteration": 1658175208671,
   "links": [],
   "panels": [
     {
@@ -55,7 +55,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "avg_over_time({__name__=~\"sensiot:.*\", name=\"$sensor\"}[$interval])",
+          "expr": "sensiot:32f876f1d2e2:RPiDev3:PCF8591:2",
           "format": "time_series",
           "hide": false,
           "instant": false,
@@ -64,11 +64,18 @@
           "refId": "A"
         },
         {
-          "expr": "",
+          "expr": "avg_over_time({__name__=~\"sensiot:.*\", name=\"$sensor\"}[$interval])",
+          "format": "time_series",
+          "hide": true,
+          "intervalFactor": 1,
+          "refId": "B"
+        },
+        {
+          "expr": "sensiot:32f876f1d2e2:RPiDev3:LM393:4",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
-          "refId": "B"
+          "refId": "C"
         }
       ],
       "thresholds": [],
@@ -120,15 +127,15 @@
       "colorPrefix": false,
       "colorValue": false,
       "colors": [
-        "#1f78c1",
-        "#629e51",
-        "#bf1b00"
+        "#70dbed",
+        "#447ebc",
+        "#3f2b5b"
       ],
       "datasource": "Prometheus",
       "decimals": null,
-      "format": "celsius",
+      "format": "m3",
       "gauge": {
-        "maxValue": 50,
+        "maxValue": 255,
         "minValue": 0,
         "show": true,
         "thresholdLabels": false,
@@ -177,7 +184,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "avg_over_time({__name__=~\"sensiot:.*:$sensor_id\", name=\"temperature\"}[$interval])",
+          "expr": "sensiot:32f876f1d2e2:RPiDev3:LM393:4",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -185,10 +192,10 @@
           "refId": "A"
         }
       ],
-      "thresholds": "15,30",
+      "thresholds": "50,150",
       "timeFrom": null,
       "timeShift": null,
-      "title": "Temperature of Sensor $sensor_id ",
+      "title": "Rain Sensor $sensor_id ",
       "transparent": true,
       "type": "singlestat",
       "valueFontSize": "80%",
@@ -214,9 +221,9 @@
       ],
       "datasource": "Prometheus",
       "decimals": null,
-      "format": "dm3",
+      "format": "dB",
       "gauge": {
-        "maxValue": 50,
+        "maxValue": 300,
         "minValue": 0,
         "show": true,
         "thresholdLabels": false,
@@ -265,7 +272,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "sensiot:5c487a57ccd4:RPiDev1:LM393:4",
+          "expr": "sensiot:32f876f1d2e2:RPiDev3:PCF8591:2",
           "format": "time_series",
           "hide": false,
           "instant": false,
@@ -274,10 +281,10 @@
           "refId": "A"
         }
       ],
-      "thresholds": "15,30",
+      "thresholds": "95,150,",
       "timeFrom": null,
       "timeShift": null,
-      "title": "Temperature of Sensor $sensor_id ",
+      "title": "Sound Sensor $sensor_id ",
       "transparent": true,
       "type": "singlestat",
       "valueFontSize": "80%",
@@ -477,21 +484,20 @@
         "auto_count": 30,
         "auto_min": "30s",
         "current": {
-          "tags": [],
-          "text": "10s",
-          "value": "10s"
+          "text": "30s",
+          "value": "30s"
         },
         "hide": 0,
         "label": null,
         "name": "interval",
         "options": [
           {
-            "selected": true,
+            "selected": false,
             "text": "10s",
             "value": "10s"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "30s",
             "value": "30s"
           },
@@ -545,8 +551,8 @@
         "allValue": null,
         "current": {
           "tags": [],
-          "text": "rain",
-          "value": "rain"
+          "text": "sound",
+          "value": "sound"
         },
         "hide": 0,
         "includeAll": false,
@@ -565,12 +571,12 @@
             "value": "humidity"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "rain",
             "value": "rain"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "sound",
             "value": "sound"
           }
@@ -583,8 +589,8 @@
         "allValue": null,
         "current": {
           "tags": [],
-          "text": "4",
-          "value": "4"
+          "text": "1",
+          "value": "1"
         },
         "hide": 0,
         "includeAll": false,
@@ -593,7 +599,7 @@
         "name": "sensor_id",
         "options": [
           {
-            "selected": false,
+            "selected": true,
             "text": "1",
             "value": "1"
           },
@@ -608,7 +614,7 @@
             "value": "3"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "4",
             "value": "4"
           },
