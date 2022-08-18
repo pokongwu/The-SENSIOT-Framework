@@ -1,10 +1,14 @@
 {
   "meta": {
     "architecture": "amd64",
-    "device_id": "RPiDev1"
+    "device_id": "RPiDev3"
   },
   "location": {
+<<<<<<< HEAD
     "building": "PL2",
+=======
+    "building": "L9",
+>>>>>>> 7013ff5eb516f634022b0c0eb480123be0ee5273
     "room": "Lobby"
   },
   "local_sensors": {
@@ -18,7 +22,7 @@
         "id": 1,
         "gpio": 25,
         "short_type": 22,
-        "interval": 60
+        "interval": 30
       }
     },
     "rain": {
@@ -31,7 +35,7 @@
         "id": 4,
         "channel": 1,
         "short_type": 393,
-        "interval": 60
+        "interval": 30
       }
     },
     "sound": {
@@ -44,7 +48,7 @@
         "id": 2,
         "channel": 0,
         "short_type": 8591,
-        "interval": 60
+        "interval": 30
       }
     }
   }
