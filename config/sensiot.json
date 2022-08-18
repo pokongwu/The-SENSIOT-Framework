@@ -30,9 +30,11 @@
           "devices": [],
           "command": "",
           "configuration": {
-            "sensor_count": 5,
+            "sensor_count": 4,
             "temperature": 25.0,
             "humidity": 62.0,
+            "rain":25,
+            "sound":25,
             "interval": 60
           }
         }

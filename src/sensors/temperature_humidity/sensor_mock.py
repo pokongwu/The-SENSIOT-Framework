@@ -14,6 +14,8 @@ class SensorMock(AbstractSensor):
         self.sensor_count = config['sensor_count']
         self.temp = config['temperature']
         self.hum = config['humidity']
+        self.rain = config['rain']
+        self.sound = config['sound']
         self.interval = config['interval']
         self.message_counter = 0
         logger.info("{} initialized successfully".format(self.name))

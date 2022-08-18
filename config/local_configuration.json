@@ -4,8 +4,8 @@
     "device_id": "RPiDev1"
   },
   "location": {
-    "building": "L9",
-    "room": "Living Room"
+    "building": "PL2",
+    "room": "Lobby"
   },
   "local_sensors": {
     "dht": {
