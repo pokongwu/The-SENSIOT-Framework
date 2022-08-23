@@ -26,9 +26,13 @@ class SensorMock(AbstractSensor):
         for sensor_id in range(1, self.sensor_count + 1):
             temp_derivation = random.randint(-2, 2)
             hum_derivation = random.randint(-5, 5)
+            sound_derivation = random.uniform(80, 140)
+            rain_derivation = random.uniform(0, 1)
             measurement = Measurement(sensor_id, "SensorMock")
             measurement.add("temperature", (self.temp + temp_derivation), "°C")
             measurement.add("humidity", (self.hum + hum_derivation), "°C")
+            measurement.add("rain", (self.rain + rain_derivation), "dm")
+            measurement.add("sound", (self.sound + sound_derivation), "dB")
             measurements.append(measurement)
             self.message_counter += 1
         return measurements

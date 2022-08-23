@@ -23,11 +23,20 @@ class DHT(AbstractSensor):
         self.event.wait(self.interval)
         logger.info("Reading data from GPIO...")
         #dht_device = adafruit_dht.self.type(board.self.gpio)
-        dht_device = adafruit_dht.DHT22(board.D25)
+        #dht_device = adafruit_dht.DHT22(config['board_number'])
+        dht_device = adafruit_dht.DHT22(board.D+self.gpio)
+        #dht_device = adafruit_dht.DHT22(board.D25)
         measurement = Measurement(self.id, self.type)
         if dht_device :
-            measurement.add("temperature", dht_device.temperature, "°C")
-            measurement.add("humidity", dht_device.humidity, "%")
-            logger.info("Data received: {}".format(measurement))
-        return [measurement]
+            try:
+                measurement.add("temperature", dht_device.temperature, "°C")
+                measurement.add("humidity", dht_device.humidity, "%")
+                logger.info("Data received: {}".format(measurement))
+                return [measurement]
+            except RuntimeError as error:
+                # Errors happen fairly often, DHT's are hard to read, just keep going
+                print(error.args[0])
+            except Exception as error:
+                    #dht_device.exit()
+                    raise error
 
