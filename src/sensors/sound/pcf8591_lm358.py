@@ -26,8 +26,7 @@ class Sound(AbstractSensor):
         logger.info("Reading data from Sound sensor...")
         i2c = board.I2C()
         pcf = PCF8591(i2c)
-        read_raw = pcf.read(self.channel)
-        read_value = read_raw / pcf.reference_voltage
+        read_value = pcf.read(self.channel)
         if read_value:
             measurement = Measurement(self.id, self.type)
             measurement.add("sound", read_value, "dB")
