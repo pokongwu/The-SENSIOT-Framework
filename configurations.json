@@ -27,6 +27,7 @@
   }
 }
 }
+
 {"rain": {
   "service": "temperature_humidity_sound_sensor",
   "type": "rain",

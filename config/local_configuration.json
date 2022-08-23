@@ -4,7 +4,11 @@
     "device_id": "RPiDev3"
   },
   "location": {
+<<<<<<< HEAD
     "building": "PL2",
+=======
+    "building": "L9",
+>>>>>>> 984a5a58773169e81473322e052829b5478ad337
     "room": "Lobby"
   },
   "local_sensors": {

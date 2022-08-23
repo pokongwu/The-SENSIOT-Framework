@@ -95,7 +95,7 @@ services:
     restart: on-failure
     depends_on:
       - prometheus
-    volumes:
+    volumes: 
       - ./config/sensiot.json:/app/sensiot.json
     networks:
       backend:
@@ -105,3 +105,19 @@ services:
       SERVICE: "prometheus_writer"
     ports:
       - "8000:8000"
+
+
+###########################
+  cadvisor:
+    image: unibaktr/cadvisor
+    restart: on-failure
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+      - /dev/disk/:/dev/disk:ro
+    networks:
+      backend:
+    ports:
+      - "8080:8080"
