@@ -24,8 +24,8 @@ class DHT(AbstractSensor):
         logger.info("Reading data from GPIO...")
         #dht_device = adafruit_dht.self.type(board.self.gpio)
         #dht_device = adafruit_dht.DHT22(config['board_number'])
-        dht_device = adafruit_dht.DHT22(board.D+self.gpio)
-        #dht_device = adafruit_dht.DHT22(board.D25)
+        #dht_device = adafruit_dht.DHT22(board.D+self.gpio)
+        dht_device = adafruit_dht.DHT22(board.D25)
         measurement = Measurement(self.id, self.type)
         if dht_device :
             try:
