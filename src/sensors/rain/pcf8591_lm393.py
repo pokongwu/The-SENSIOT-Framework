@@ -26,7 +26,8 @@ class Rain(AbstractSensor):
         logger.info("Reading data from Rain sensor...")
         i2c = board.I2C()
         pcf = PCF8591(i2c)
-        read_value = pcf.read(self.channel)
+        raw_value = pcf.read(self.channel)
+        read_value = raw_value/pcf.reference_voltage
         if read_value:
             measurement = Measurement(self.id, self.type)
             measurement.add("rain", read_value, "cm")
