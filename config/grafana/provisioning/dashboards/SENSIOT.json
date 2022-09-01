@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 1,
-  "iteration": 1662025210131,
+  "iteration": 1662054691486,
   "links": [],
   "panels": [
     {
@@ -752,14 +752,14 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "container_network_receive_bytes_total{image=\"dht_rain_sound_sensor\", name=\"sound_sound\"}",
+          "expr": "rate(container_network_receive_bytes_total{image=\"dht_rain_sound_sensor\", name=\"sound_sound\"}[10s]) *8 /1024 / 1024",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
           "refId": "A"
         },
         {
-          "expr": "container_network_transmit_bytes_total{image=\"dht_rain_sound_sensor\", name=\"sound_sound\"}",
+          "expr": "rate(container_network_transmit_bytes_total{image=\"dht_rain_sound_sensor\", name=\"sound_sound\"}[10s]) *8 / 1024 / 1024",
           "format": "time_series",
           "intervalFactor": 1,
           "refId": "B"
@@ -785,7 +785,7 @@
       },
       "yaxes": [
         {
-          "format": "Bps",
+          "format": "Mbits",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -843,14 +843,14 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "container_network_receive_bytes_total{image=\"dht_rain_sound_sensor\", name=\"dht_dht\"}",
+          "expr": "rate(container_network_receive_bytes_total{image=\"dht_rain_sound_sensor\", name=\"dht_dht\"}[10s]) *8 /1024 / 1024",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
           "refId": "A"
         },
         {
-          "expr": "container_network_transmit_bytes_total{image=\"dht_rain_sound_sensor\", name=\"dht_dht\"}",
+          "expr": "rate(container_network_transmit_bytes_total{image=\"dht_rain_sound_sensor\", name=\"dht_dht\"}[10s]) *8 /1024/1024",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -877,7 +877,7 @@
       },
       "yaxes": [
         {
-          "format": "Bps",
+          "format": "Mbits",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -935,14 +935,14 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "container_network_receive_bytes_total{image=\"dht_rain_sound_sensor\", name=\"rain_rain\"}",
+          "expr": "rate(container_network_receive_bytes_total{image=\"dht_rain_sound_sensor\", name=\"rain_rain\"}[10s]) *8 /1024 / 1024",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
           "refId": "A"
         },
         {
-          "expr": "container_network_transmit_bytes_total{image=\"dht_rain_sound_sensor\", name=\"rain_rain\"}",
+          "expr": "rate(container_network_transmit_bytes_total{image=\"dht_rain_sound_sensor\", name=\"rain_rain\"}[10s]) * 8 /1024 / 1024",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -969,7 +969,7 @@
       },
       "yaxes": [
         {
-          "format": "Bps",
+          "format": "Mbits",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -1001,7 +1001,6 @@
         "auto_count": 30,
         "auto_min": "30s",
         "current": {
-          "tags": [],
           "text": "30s",
           "value": "30s"
         },
@@ -1154,7 +1153,7 @@
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-15m",
     "to": "now"
   },
   "timepicker": {
