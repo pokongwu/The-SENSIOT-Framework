@@ -36,11 +36,12 @@ class DHT(AbstractSensor):
                 return [measurement]
             except RuntimeError as error:
                 # Errors happen fairly often, DHT's are hard to read, just keep going
-                logger.error("Runtime Error Occurred: {}".format(error.args[0]))
+                logger.warning("Runtime Error Occurred: {}".format(error.args[0]))
                 #print(error.args[0])
                 time.sleep(2.0)
             except Exception as error:
                     #dht_device.exit()
                     logger.error("Exception Occurred: {}".format(error.args[0]))
+                    dht_device.exit()
                     raise error
 
